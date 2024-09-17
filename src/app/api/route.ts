@@ -1,4 +1,12 @@
+import { cookies } from "next/headers";
+
 export function GET() {
+  const cookieStore = cookies();
+
+  console.log({
+    hasTokenCookie: cookieStore.get('token')
+  })
+
   return Response.json({
     message: 'hello'
   }, {
