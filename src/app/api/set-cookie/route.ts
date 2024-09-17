@@ -9,7 +9,7 @@ export function POST(req: Request){
 
   const token = 'test';
   cookieStore.set('token', token, {
-    domain: req.headers.get('origin') ?? 'localhost',
+    domain: process.env.DOMAIN ?? undefined,
     path: '/api/v2/test',
     sameSite: 'lax',
     expires: date,
